@@ -4,7 +4,7 @@ MAINTAINER István Koren, Yordan Manolov
 # Install Swagger dependencies 
 RUN apt-get update \
   && apt-get -qqy --no-install-recommends install \
-     #nginx \
+     nginx \
      unzip
 # Set build directory
 WORKDIR /opt
