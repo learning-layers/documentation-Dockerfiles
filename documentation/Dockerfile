@@ -10,25 +10,26 @@ RUN apt-get update \
 WORKDIR /opt
 
 # Download Swagger-UI
-ADD https://github.com/swagger-api/swagger-ui/archive/v2.1.3.zip \
-  && unzip swag* #"swagger-ui-2.1.3/dist/*" -d "/var/www"
-  && cp -R * /usr/share/local/nginx/html
+RUN wget https://github.com/swagger-api/swagger-ui/archive/v2.1.3.zip \
+  && unzip v* \ 
+  && cp -R swag* /usr/share/nginx/html
 
-# For debugging purposes:
-#RUN ls -a .
-#RUN ls -a /usr/share/local/nginx/html
-
-# Copy service configuration to location readable by reverse proxy
-ENV SRVDIR /usr/local/openresty/conf/services
-ENV AWDIR /etc/nginx/sites-available
-ENV EWDIR /etc/nginx/sites-enabled
-
-ADD ../nginx.conf .
-
-CMD cp nginx.conf $SRVDIR \
-    && cp nginx.conf $AWDIR \
-    && cp -s nginx.conf $EWDIR \
-    && nginx -g daemon off 
+## Copy service configuration to location readable by reverse proxy
+#ENV SRVDIR /usr/local/openresty/conf/services
+#ENV AWDIR /etc/nginx/sites-available
+#ENV EWDIR /etc/nginx/sites-enabled
+#
+#ADD ../nginx.conf .
+#
+#CMD cp nginx.conf $SRVDIR \
+#    && cp nginx.conf $AWDIR \
+#    && cp -s nginx.conf $EWDIR \
+#    && nginx -g daemon off 
 
 # Provide default port if random port mapping invoked
 EXPOSE 80 
+
+# Do not daemonze
+RUN echo 'daemon off;' >> /etc/nginx/nginx.conf
+
+CMD ["nginx"]
