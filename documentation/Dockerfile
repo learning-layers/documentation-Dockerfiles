@@ -15,6 +15,6 @@ RUN wget https://github.com/swagger-api/swagger-ui/archive/v2.1.3.zip \
 
 # Copy service configuration to location readable by reverse proxy
 ENV SRVDIR /usr/local/openresty/conf/services
-RUN cp -R v2.1.3 $SRVDIR
+ 
+CMD cp -R v2.1.3 $SRVDIR
 
-#EXPOSE 80
