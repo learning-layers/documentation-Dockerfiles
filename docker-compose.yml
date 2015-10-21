@@ -1,0 +1,5 @@
+documentation:
+  container_name: documentation
+  image: learninglayers/documentation:0.1.0
+  enf_file:
+    - common.env
