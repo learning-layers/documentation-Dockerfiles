@@ -3,7 +3,7 @@ documentation:
   image: learninglayers/documentation:0.1.0
   enf_file:
     - common.env
-  links:
-    - adapter
+#  links:
+#    - adapter
   volumes_from: 
     - adapter-data
