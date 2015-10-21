@@ -3,10 +3,14 @@ MAINTAINER István Koren, Yordan Manolov
 
 # Install Nginx
 RUN apt-get update \
-  && apt-get -qqy --no-install-recommends install nginx unzip
+  && apt-get -qqy --no-install-recommends install \
+    #nginx \ 
+    unzip
 
 # Download Swagger-UI
-RUN wget https://github.com/swagger-api/swagger-ui/archive/v2.1.3.zip \
-  && unzip v2.1.3.zip "swagger-ui-2.1.3/dist/*" -d "/var/www"
+WORKDIR /opt
+ADD https://github.com/swagger-api/swagger-ui/archive/v2.1.3.zip . \
+  && unzip v2.1.3.zip #\
+#  && cp -R swagger-ui-2.1.3/dist/* /usr/local/nginx/html"
 
-EXPOSE 80
+# EXPOSE 80
