@@ -7,8 +7,11 @@ if [ -f nginx.conf ]
 	out=$(docker ps -a | grep -c adapter-data)
 	if [ $out -gt 0 ] 
 	 then
+		# create path in Adapter container
+		nsv=/usr/local/openresty/conf/services/swaggerui
+		docker exec adapter mkdir -p $nsv/	
 		# copy nginx configuration entry for service
-		docker cp nginx.conf adapter-data:/usr/local/openresty/conf/services
+		docker cp nginx.conf adapter-data:$nsv
 		# restart nginx daemon in the adapter container
 		docker kill --signal="HUP" adapter
 	fi
