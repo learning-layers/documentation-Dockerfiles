@@ -5,5 +5,5 @@ documentation:
     - common.env
 #  links:
 #    - adapter
-  volumes_from: 
-    - adapter-data
+#  volumes_from: 
+#    - adapter-data
