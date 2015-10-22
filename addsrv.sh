@@ -5,7 +5,7 @@
 if [ -f nginx.conf ] 
  then
 	out=$(docker ps -a | grep -c adapter-data)
-	if [ $out -gt 1 ] 
+	if [ $out -gt 0 ] 
 	 then
 		# copy nginx configuration entry for service
 		docker cp nginx.conf adapter-data:/usr/local/openresty/conf/services
