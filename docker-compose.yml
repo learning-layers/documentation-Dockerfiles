@@ -7,3 +7,6 @@ documentation:
 #    - adapter
 #  volumes_from: 
 #    - adapter-data
+  ports:
+  # port 80 reserved for adapter
+     - 83:80
