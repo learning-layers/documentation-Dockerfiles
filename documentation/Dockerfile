@@ -14,13 +14,7 @@ WORKDIR /opt
 RUN wget https://github.com/swagger-api/swagger-ui/archive/v2.1.3.zip \
   && unzip v* \ 
 #  && cp -R swag* /usr/share/nginx/html
-&& cp -r swagger-ui-2.1.3/dist/* /usr/share/nginx/html
-
-## Copy service configuration to location readable by reverse proxy
-#ENV SRVDIR /usr/local/openresty/conf/services
-#ENV AWDIR /etc/nginx/sites-available
-#ENV EWDIR /etc/nginx/sites-enabled
-#
+  && cp -r swagger-ui-2.1.3/dist/* /usr/share/nginx/html
 
 # Provide default port if random port mapping invoked
 EXPOSE 80 
