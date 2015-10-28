@@ -1,6 +1,6 @@
 documentation:
   container_name: documentation
-  image: learninglayers/documentation:0.1.0
+  image: learninglayers/documentation:1.0
   env_file:
     - common.env
 #  links:
