@@ -1,8 +1,8 @@
 documentation:
   container_name: documentation
   image: learninglayers/documentation:1.1
-  env_file:
-    - common.env
+#  env_file:
+#    - common.env
 #  links:
 #    - adapter
 #  volumes_from: 
