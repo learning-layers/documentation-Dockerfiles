@@ -1,6 +1,6 @@
 documentation:
   container_name: documentation
-  image: jrwthll/documentation-dockerfiles:1.2
+  image: jrwthll/documentation-dockerfiles:1.3
 #  env_file:
 #    - common.env
 #  links:
