@@ -1,12 +1,5 @@
 documentation:
   container_name: documentation
   image: learninglayers/documentation-dockerfiles:0.0.1
-#  env_file:
-#    - common.env
-#  links:
-#    - adapter
-#  volumes_from: 
-#    - adapter-data
   ports:
-  # port 80 reserved for adapter
-     - 83:80
+     - 80
