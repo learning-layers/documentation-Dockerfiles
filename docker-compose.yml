@@ -1,5 +1,5 @@
 documentation:
   container_name: documentation
-  image: learninglayers/documentation-dockerfiles:0.0.1
+  image: learninglayers/documentation:0.0.1
   ports:
      - 80
